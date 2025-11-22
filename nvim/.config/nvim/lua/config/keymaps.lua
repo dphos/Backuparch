@@ -31,9 +31,6 @@ vim.keymap.set('n', '<leader>e', function()
   end
 end, { desc = 'Toggle Oil file explorer' })
 
-vim.keymap.set('i', '<C-p>', '<Up>')
-vim.keymap.set('i', '<C-n>', '<Down>')
-
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-a>', '^')
@@ -41,8 +38,8 @@ vim.keymap.set('n', '<C-e>', '$')
 vim.keymap.set('i', '<C-a>', '<C-o>^')
 vim.keymap.set('i', '<C-e>', '<C-o>$')
 vim.keymap.set('c', '<C-a>', '<C-b>')
-vim.keymap.set({ 'c', 'i' }, '<C-f>', '<Right>')
-vim.keymap.set({ 'c', 'i' }, '<C-b>', '<Left>')
+vim.keymap.set({ 'i' }, '<C-f>', '<Right>')
+vim.keymap.set({ 'i' }, '<C-b>', '<Left>')
 
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
