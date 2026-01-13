@@ -18,6 +18,9 @@ vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
 vim.o.list = true
+
+vim.opt.signcolumn = 'yes'
+vim.opt.colorcolumn = '150'
 vim.opt.listchars = 'trail:-,nbsp:+,tab:▏ ,lead:·'
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4

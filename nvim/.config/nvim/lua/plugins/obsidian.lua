@@ -19,6 +19,10 @@ return {
         name = 'personal',
         path = '~/private/Obsidian/obsidian',
       },
+      {
+        name = 'personal-linux',
+        path = '~/Obsidian/obsidian',
+      },
     },
     legacy_commands = false,
 

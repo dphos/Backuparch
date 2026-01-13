@@ -11,7 +11,6 @@ vim.keymap.set('n', '<leader>wk', '<C-w><C-k>', { desc = 'Move focus to the uppe
 
 vim.keymap.set('n', '<S-h>', '<cmd>bprevious<CR>')
 vim.keymap.set('n', '<S-l>', '<cmd>bnext<CR>')
-vim.keymap.set('n', '<C-w>', '<cmd>bdelete<CR>')
 vim.keymap.set('n', '<C-t>', '<cmd>tabnew<CR>')
 
 vim.keymap.set('n', '<leader>q', '<cmd>quit<CR>')
@@ -43,8 +42,6 @@ vim.keymap.set({ 'i' }, '<C-b>', '<Left>')
 
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
-
-vim.keymap.set('n', '<leader>xx', '<cmd>lua vim.diagnostic.setqflist()<CR>')
 
 vim.keymap.set('n', '<leader>pp', '<cmd>set spell spelllang=es<CR>')
 
