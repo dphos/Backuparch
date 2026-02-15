@@ -67,6 +67,8 @@ vim.keymap.set('n', '<leader>fw', '<CMD>noautocmd w<CR>')
 vim.keymap.set({ 'n', 'v', 'x' }, 'j', 'gj')
 vim.keymap.set({ 'n', 'v', 'x' }, 'k', 'gk')
 
+vim.keymap.set({'n', 'v'}, 'gp','`[v`]', {desc = "select last paste"})
+
 -- vim.keymap.set('n', '<leader>gg', '<CMD>Neogit cwd=%:p:h<CR>')
 --
 -- vim.keymap.set('n', '<leader>gc', '<CMD>Neogit cwd=~/Backuparch<CR>')

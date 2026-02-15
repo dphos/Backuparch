@@ -5,7 +5,7 @@ return {
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      'nvim-java/nvim-java',
+      -- 'nvim-java/nvim-java',
 
       -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
@@ -125,48 +125,41 @@ return {
         },
       }
 
-      if vim.fn.has 'wsl' == 1 then
-        require('java').setup()
-        require('lspconfig').jdtls.setup {
-          -- Your custom nvim-java configuration goes here
-          cmd = (function()
-            local home = os.getenv 'HOME' -- En Linux es HOME
-            local lombok_path = home .. '/.config/nvim/lombok.jar'
-
-            -- Asegúrate de que lombok.jar exista (lo descargamos más abajo)
-            -- Ruta a jdtls instalada con Mason
-            local mason_registry = vim.fn.stdpath 'data' .. '/mason/packages/jdtls'
-
-            -- Buscar el .jar del launcher dentro de plugins
-            local launcher = vim.fn.glob(mason_registry .. '/plugins/org.eclipse.equinox.launcher_*.jar')
-
-            return {
-              'java',
-              '-javaagent:' .. lombok_path,
-              '-Xmx4G',
-              '-XX:+UseG1GC',
-              '-XX:+UseStringDeduplication',
-              '--add-modules=ALL-SYSTEM',
-              '--add-opens',
-              'java.base/java.util=ALL-UNNAMED',
-              '--add-opens',
-              'java.base/java.lang=ALL-UNNAMED',
-              '-jar',
-              launcher,
-              '-configuration',
-              mason_registry .. '/config_linux',
-              '-data',
-              vim.fn.stdpath 'cache' .. '/jdtls/workspace',
-            }
-          end)(),
-        }
-        vim.lsp.config('angularls', {})
-        vim.lsp.enable 'angularls'
-
-        vim.lsp.config('vtsls', {})
-        vim.lsp.enable 'vtsls'
-      end
-
+      -- require('java').setup()
+      -- require('lspconfig').jdtls.setup {
+      --   -- Your custom nvim-java configuration goes here
+      --   cmd = (function()
+      --     local home = os.getenv 'HOME' -- En Linux es HOME
+      --     local lombok_path = home .. '/.config/nvim/lombok.jar'
+      --
+      --     -- Asegúrate de que lombok.jar exista (lo descargamos más abajo)
+      --     -- Ruta a jdtls instalada con Mason
+      --     local mason_registry = vim.fn.stdpath 'data' .. '/mason/packages/jdtls'
+      --
+      --     -- Buscar el .jar del launcher dentro de plugins
+      --     local launcher = vim.fn.glob(mason_registry .. '/plugins/org.eclipse.equinox.launcher_*.jar')
+      --
+      --     return {
+      --       'java',
+      --       '-javaagent:' .. lombok_path,
+      --       '-Xmx4G',
+      --       '-XX:+UseG1GC',
+      --       '-XX:+UseStringDeduplication',
+      --       '--add-modules=ALL-SYSTEM',
+      --       '--add-opens',
+      --       'java.base/java.util=ALL-UNNAMED',
+      --       '--add-opens',
+      --       'java.base/java.lang=ALL-UNNAMED',
+      --       '-jar',
+      --       launcher,
+      --       '-configuration',
+      --       mason_registry .. '/config_linux',
+      --       '-data',
+      --       vim.fn.stdpath 'cache' .. '/jdtls/workspace',
+      --     }
+      --   end)(),
+      -- }
+      --
       vim.lsp.config('clangd', {})
       vim.lsp.enable 'clangd'
 

@@ -10,7 +10,7 @@ return {
       require('vague').setup {
         -- optional configuration here
       }
-      vim.cmd 'colorscheme kanagawa'
+      vim.cmd 'colorscheme vague'
     end,
   },
 }
