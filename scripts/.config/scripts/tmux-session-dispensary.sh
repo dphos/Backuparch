@@ -1,7 +1,8 @@
 #!/bin/bash
 
 DIRS=(
-    "$HOME/programing/"
+    "$HOME/programing"
+    "$HOME/programing/proj"
     "$HOME/private/Obsidian"
     "$HOME"
 )
