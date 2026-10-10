@@ -47,3 +47,7 @@ if vim.g.neovide then
   vim.g.guifont = 'Cascadia Code NF:h9'
   vim.g.neovide_scale_factor = 0.8
 end
+
+-- rest config
+-- vim.opt.rocks.enabled = false
+-- vim.opt.rocks.hererocks = true
